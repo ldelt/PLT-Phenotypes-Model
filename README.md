@@ -7,7 +7,7 @@ Download the latest release from [here](https://github.com/ldelt/PLT-Phenotypes-
 You can run the model in two ways:
 
 1. **Using Jupyter Notebook**  
-   Launch the model via the `run_model.ipynb` notebook using JupyterLab.
+   Launch the model via the `run_model.ipynb` notebook using Google Colab.
 
 2. **Using Python Script**  
    To install the necessary libraries, run `pip3 install -r requirements.txt` in the terminal.  
