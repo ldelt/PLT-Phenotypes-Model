@@ -1,4 +1,6 @@
 #%%
+import pandas as pd
+
 from supp_func import *
 from models import calculate_concentrations
 #%%
@@ -72,5 +74,7 @@ points = [
 ]
 
 results = calculate_concentrations(points, max_time, y0, params)
+results.to_excel('results.xlsx', index=False)
 allowed_columns = ['N_rest', 'N_sph', 'N_inh', 'N_gp', 'N_agg', 'N_exh']
-plot_selected_columns(results, allowed_columns, max_time, xtick, save_path='plot.png', min_time=min_time, legend=True)
+plot_selected_columns(results, allowed_columns, max_time, xtick, save_path='results.png', min_time=min_time, legend=True)
+#%%
