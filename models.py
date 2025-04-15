@@ -101,3 +101,26 @@ def calculate_concentrations(points, max_time, y0, params):
         results = pd.concat([results, df], axis=0)
 
     return results.reset_index(drop=True)
+
+
+# Limitations on negative values
+def trim_negative_values(t, y, k1, k2, k3, k5, k6, k7, k12, k21, k11):
+    return np.maximum(y, 0)
+
+# event_negative remains the same
+def event_negative(t, y, k1, k2, k3, k5, k6, k7, k12, k21, k11):
+    return np.min(y) - 1e-6
+
+event_negative.terminal = True
+event_negative.direction = -1
+
+# System solution
+sol = solve_ivp(
+    fun=system,
+    t_span=t_span,
+    y0=current_y0,
+    method='LSODA',
+    t_eval=t_eval,
+    args=(k1, k2, k3, k5, k6, k7, k12, k21, k11),
+    events=event_negative
+)
