@@ -2,6 +2,8 @@
 
 ## Running the Model
 
+Download the latest release from [here](https://github.com/ldelt/PLT-Phenotypes-Model/releases).
+
 You can run the model in two ways:
 
 1. **Using Jupyter Notebook**  
@@ -19,3 +21,4 @@ Explanations are provided in the comments within these files.
 ## Changing Model Behavior
 
 To modify the core logic of the program, edit the `models.py` file.
+
